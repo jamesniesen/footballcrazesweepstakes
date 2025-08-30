@@ -11,7 +11,9 @@ namespace FootballCrazeSweepstakes
     {
         int AvailableETicketsForSale(int sweepstakeYear);
         Task<IEnumerable<ETicket>> AddETickets(int year, IEnumerable<ETicket> uploadedETickets, CancellationToken cancellationToken);
-        Task<List<SweepstakePurchaseETicket>> SavePurchasedETickets(int year, List<SweepstakePurchase> uploadedPurchases, CancellationToken cancellationToken);
+        List<SweepstakePurchaseETicket> SavePurchasedETickets(int year, List<SweepstakePurchase> uploadedPurchases);
+        List<SweepstakePurchase> SaveSweepstakePurchases(int year);
         ETicket GetTestETicket(int year);
+        List<SweepstakePurchaseETicket> GetPurchasedETickets(int year);
     }
 }

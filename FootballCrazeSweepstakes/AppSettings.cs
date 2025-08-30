@@ -3,6 +3,7 @@
     public class AppSettings
     {
         public required string AthleticsEmailAddress { get; set; }
+        public required string SendPurchaseSummaryEmailTo { get; set; }
         public  required string AthleticsPhone { get; set; }
         public required string SweepstakesLink { get; set; }
         public required SmtpSettings SmptSettings { get; set; }

@@ -2,6 +2,8 @@ using FootballCrazeSweepstakes.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Serilog;
 using System.ComponentModel.Design.Serialization;
 
 namespace FootballCrazeSweepstakes
@@ -35,7 +37,18 @@ namespace FootballCrazeSweepstakes
                 services.Configure<AppSettings>(context.Configuration);
                 services.Configure<SmtpSettings>(context.Configuration.GetSection("SmtpSettings"));
                 services.AddDbContext<ApplicationDbContext>();
-                    services.AddTransient<IFootballCrazeSweepstakesRepository, FootballCrazeSweepstakesRepository>();
+
+                // add logging
+                var serilogLogger = new LoggerConfiguration()
+                     .WriteTo.File(path: AppDomain.CurrentDomain.BaseDirectory + $@"App_Data\\errorlog.txt")
+                     .CreateLogger();
+                services.AddLogging(x =>
+                {
+                    x.SetMinimumLevel(LogLevel.Information);
+                    x.AddSerilog(logger: serilogLogger, dispose: true);
+                });
+
+                services.AddTransient<IFootballCrazeSweepstakesRepository, FootballCrazeSweepstakesRepository>();
                     services.AddTransient<IFootballCrazeSweepstakesService, FootballCrazeSweepstakesService>();
                     services.AddTransient<Dashboard>();
                 });

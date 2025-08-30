@@ -11,3 +11,8 @@ The CLI tools for EF Core are not part of .NET Core, and need to be installed se
 
 To update the tools:
 - \>`dotnet tool update --global dotnet-ef`
+
+to install :
+Using the Developer PowerShell, navigate to the solution's FootballCraze Sweepstakes
+project and run:
+`dotnet ef database update`

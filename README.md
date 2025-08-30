@@ -1,4 +1,4 @@
-The app handles Sweepstake purchasing,the first 3 following steps:
+The app handles Sweepstake purchases:
 
 step1 Upload E-Tickets
 Peter Wolf creates the sweepstake tickets for the year.  He sets a number
@@ -17,7 +17,7 @@ setup gems sweepstakes:
 
 Step 2 Test the email service that sends the e-tickets to make sure its working.
 Step 3 Upload weekly Purchases from Gems and email (email automatically happens 
-when uploaded).
+when uploaded).  SMTP settings can be updated in the appsettings.json file.
 Step 4 Close sales.  Remove link from website.  Tom notifies Gems to turn off
 credit card processing.  Right now, the app works only for the current year. Sales
 must stop and the final weekly purchase upload finished by Jan 1.  They usually

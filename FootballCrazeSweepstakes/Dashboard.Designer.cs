@@ -38,13 +38,18 @@
             emailAddress = new TextBox();
             label4 = new Label();
             uploadGemPurchases = new Button();
+            instructions = new LinkLabel();
+            linkToLog = new LinkLabel();
+            label5 = new Label();
+            sendYearEndPurchasedTickets = new Button();
             SuspendLayout();
             // 
             // uploadETickets
             // 
             uploadETickets.Location = new Point(386, 128);
+            uploadETickets.Margin = new Padding(2, 3, 2, 3);
             uploadETickets.Name = "uploadETickets";
-            uploadETickets.Size = new Size(319, 58);
+            uploadETickets.Size = new Size(318, 57);
             uploadETickets.TabIndex = 1;
             uploadETickets.Text = "Upload E-Tickets";
             uploadETickets.UseVisualStyleBackColor = true;
@@ -53,7 +58,8 @@
             // sweepstakeYear
             // 
             sweepstakeYear.AutoSize = true;
-            sweepstakeYear.Location = new Point(25, 28);
+            sweepstakeYear.Location = new Point(24, 27);
+            sweepstakeYear.Margin = new Padding(2, 0, 2, 0);
             sweepstakeYear.Name = "sweepstakeYear";
             sweepstakeYear.Size = new Size(73, 41);
             sweepstakeYear.TabIndex = 2;
@@ -62,7 +68,8 @@
             // ticketsAvailableForSale
             // 
             ticketsAvailableForSale.AutoSize = true;
-            ticketsAvailableForSale.Location = new Point(25, 69);
+            ticketsAvailableForSale.Location = new Point(24, 68);
+            ticketsAvailableForSale.Margin = new Padding(2, 0, 2, 0);
             ticketsAvailableForSale.Name = "ticketsAvailableForSale";
             ticketsAvailableForSale.Size = new Size(234, 41);
             ticketsAvailableForSale.TabIndex = 3;
@@ -71,7 +78,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 128);
+            label1.Location = new Point(24, 128);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(333, 41);
             label1.TabIndex = 4;
@@ -80,7 +88,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 233);
+            label2.Location = new Point(12, 232);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(412, 41);
             label2.TabIndex = 5;
@@ -88,9 +97,10 @@
             // 
             // testEmail
             // 
-            testEmail.Location = new Point(1102, 224);
+            testEmail.Location = new Point(1103, 224);
+            testEmail.Margin = new Padding(2, 3, 2, 3);
             testEmail.Name = "testEmail";
-            testEmail.Size = new Size(188, 58);
+            testEmail.Size = new Size(187, 57);
             testEmail.TabIndex = 6;
             testEmail.Text = "Test Email";
             testEmail.UseVisualStyleBackColor = true;
@@ -99,7 +109,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(456, 230);
+            label3.Location = new Point(457, 230);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(171, 41);
             label3.TabIndex = 7;
@@ -107,35 +118,89 @@
             // 
             // emailAddress
             // 
-            emailAddress.Location = new Point(633, 230);
+            emailAddress.Location = new Point(634, 230);
+            emailAddress.Margin = new Padding(2, 3, 2, 3);
             emailAddress.Name = "emailAddress";
-            emailAddress.Size = new Size(418, 47);
+            emailAddress.Size = new Size(417, 47);
             emailAddress.TabIndex = 8;
             emailAddress.TextChanged += emailAddress_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 310);
+            label4.Location = new Point(12, 309);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(549, 41);
+            label4.Size = new Size(654, 41);
             label4.TabIndex = 9;
-            label4.Text = "Step 3: Upload Weekly Gems purchases:";
+            label4.Text = "Step 3: Send Newly/weekly Purchased E-Tickets:";
+            label4.Click += label4_Click;
             // 
             // uploadGemPurchases
             // 
-            uploadGemPurchases.Location = new Point(601, 301);
+            uploadGemPurchases.Location = new Point(670, 301);
+            uploadGemPurchases.Margin = new Padding(2, 3, 2, 3);
             uploadGemPurchases.Name = "uploadGemPurchases";
-            uploadGemPurchases.Size = new Size(450, 58);
+            uploadGemPurchases.Size = new Size(449, 57);
             uploadGemPurchases.TabIndex = 10;
-            uploadGemPurchases.Text = "Upload Gems Up Purchases";
+            uploadGemPurchases.Text = "Send Purchased E-Tickets";
             uploadGemPurchases.UseVisualStyleBackColor = true;
+            uploadGemPurchases.Click += uploadGemPurchases_Click;
+            // 
+            // instructions
+            // 
+            instructions.AutoSize = true;
+            instructions.Location = new Point(515, 644);
+            instructions.Margin = new Padding(7, 0, 7, 0);
+            instructions.Name = "instructions";
+            instructions.Size = new Size(172, 41);
+            instructions.TabIndex = 11;
+            instructions.TabStop = true;
+            instructions.Text = "Instructions";
+            instructions.LinkClicked += instructionsClicked;
+            // 
+            // linkToLog
+            // 
+            linkToLog.AutoSize = true;
+            linkToLog.Location = new Point(515, 430);
+            linkToLog.Name = "linkToLog";
+            linkToLog.Size = new Size(211, 41);
+            linkToLog.TabIndex = 12;
+            linkToLog.TabStop = true;
+            linkToLog.Text = "View Error Log";
+            linkToLog.LinkClicked += linkToLog_LinkClicked;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 389);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(748, 41);
+            label5.TabIndex = 13;
+            label5.Text = "Step 4: Send Year-End Purchased E-Tickets information:";
+            label5.Click += label5_Click;
+            // 
+            // sendYearEndPurchasedTickets
+            // 
+            sendYearEndPurchasedTickets.Location = new Point(753, 381);
+            sendYearEndPurchasedTickets.Margin = new Padding(2, 3, 2, 3);
+            sendYearEndPurchasedTickets.Name = "sendYearEndPurchasedTickets";
+            sendYearEndPurchasedTickets.Size = new Size(575, 57);
+            sendYearEndPurchasedTickets.TabIndex = 14;
+            sendYearEndPurchasedTickets.Text = "Send Year-End Purchased E-tickets Info";
+            sendYearEndPurchasedTickets.UseVisualStyleBackColor = true;
+            sendYearEndPurchasedTickets.Click += sendYearEndPurchasedTickets_Click;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1350, 583);
+            ClientSize = new Size(1350, 748);
+            Controls.Add(sendYearEndPurchasedTickets);
+            Controls.Add(label5);
+            Controls.Add(linkToLog);
+            Controls.Add(instructions);
             Controls.Add(uploadGemPurchases);
             Controls.Add(label4);
             Controls.Add(emailAddress);
@@ -146,6 +211,7 @@
             Controls.Add(ticketsAvailableForSale);
             Controls.Add(sweepstakeYear);
             Controls.Add(uploadETickets);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "Dashboard";
             Text = "Football Craze Sweepstakes Dashboard";
             Load += Dashboard_Load;
@@ -164,5 +230,9 @@
         private TextBox emailAddress;
         private Label label4;
         private Button uploadGemPurchases;
+        private LinkLabel instructions;
+        private LinkLabel linkToLog;
+        private Label label5;
+        private Button sendYearEndPurchasedTickets;
     }
 }
